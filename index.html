@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>我想抱着你，回到海里</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<!-- <audio src="" autoplay="autoplay" loop="loop"></audio>-->
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="space"/><span class="comments">小妩，现在是2022年8月15日 凌晨4点35分</span><br />	
+				<span class="space"/><span class="comments">你呢，已经睡着了。</span><br />	
+				<span class="space"/><span class="comments">你打开的这个网站，是只属于我们两个地方</span><br />	
+				<span class="space"/><span class="comments">这里不像是摆满鲜花蜡烛的广场，也不是转瞬即逝的一两句表白情话</span><br />	
+				<span class="space"/><span class="comments">这里更像是一座石碑，永远的立在互联网历史上一个不为人知的角落里</span><br />	
+				<span class="space"/><span class="comments">也希望，我们之间可以像这个网站一样。历久弥新</span><br />	
+				<span class="space"/><span class="comments"></span><br />	
+				<span class="space"/><span class="comments">人的一生中，总会遇到一些人</span><br />	
+				<span class="space"/><span class="comments">但是，悲伤又幸运的事情是，大部分的人都无法走进自己生命里哪怕一点</span><br />	
+				<span class="space"/><span class="comments">幸运的是遇到你，可是难过的也是遇见你</span><br />	
+				<span class="space"/><span class="comments"></span><br />	
+				<span class="space"/><span class="comments">一开始遇见你的时候，只是浅浅的聊着天</span><br />	
+				<span class="space"/><span class="comments">气氛让我觉得莫名其妙的很舒服，也很安心</span><br />	
+				<span class="space"/><span class="comments">出差旅途中的去到一个完全陌生的城市</span><br />	
+				<span class="space"/><span class="comments">还好有你><br />	
+				<span class="space"/><span class="comments">我们一起聊天，一起打狼人杀。</span><br />	
+				<span class="space"/><span class="comments">最初你和我说那个人的时候，我内心是完全不在乎的</span><br />	
+				<span class="space"/><span class="comments">但是随着和你接触越来越深，我发现自己越来越难平衡了</span><br />	
+				<span class="space"/><span class="comments">在你和我说，很多事情不愿意告诉我</span><br />	
+				<span class="space"/><span class="comments">在你和我说，先来后到，的时候</span><br />
+					
+				<span class="space"/><span class="comments">在你一次次回避我的问题的时候</span><br />	
+				<span class="space"/><span class="comments">我真的难受到呼吸都会很困难</span><br />	
+				<span class="space"/><span class="comments">紧接着身体的疼痛清晰的告诉我</span><br />	
+				<span class="space"/><span class="comments">我很在意你，在意到情绪根本没有办法好好控制</span><br />	
+				<span class="space"/><span class="comments">自己怕是喜欢上你了</span><br />	
+				<span class="space"/><span class="comments">...............</span><br />	
+				<span class="space"/><span class="comments"></span><br />	
+				<span class="space"/><span class="comments">我花了3个晚上，写了这个网站给你，每一行代码都是我敲的</span><br />	
+				<span class="space"/><span class="comments">我想告诉你的是，不论怎么样吧</span><br />	
+				<span class="space"/><span class="comments">我也不会要求你做什么</span><br />	
+				<span class="space"/><span class="comments">就只是想告诉你</span><br />	
+				<span class="space"/><span class="comments">我喜欢你</span><br />	
+				<span class="space"/><span class="comments"></span><br />	
+				
+
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">-Wu</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2022, 7,15  );
+		together.setHours(04);
+		together.setMinutes(35);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
